@@ -34,7 +34,9 @@ public class ChunkGameObjectScript : MonoBehaviour, IPrefab
     public void CreateFromChunk(Chunk chunk, Dictionary<string, Transform> decoratorPrefabs)
     {
         CreateChunkGameObjectMesh(chunk);
-        CreateGameObjectDecorations(chunk, decoratorPrefabs);
+		if (decoratorPrefabs.Count != 0) {
+	        CreateGameObjectDecorations(chunk, decoratorPrefabs);
+		}
     }
 
     /// <summary>
